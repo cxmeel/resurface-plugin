@@ -1,0 +1,13 @@
+{
+    "name": "ResurfacePlugin",
+    "tree": {
+        "$path": "build",
+        "Packages": {
+            "$path": "Packages",
+            "$className": "Folder"
+        },
+        "WallyPackageManifest": {
+            "$path": "wally.toml"
+        }
+    }
+}

@@ -1,0 +1,664 @@
+[inputs."assets/Icons/backspace.png"]
+hash = "29bb265468b004ff09e8945a92912037d9bcff5c08be1762b0790132f32769c4"
+id = 86839678891530
+slice = [[0, 0], [16, 16]]
+packable = true
+
+[inputs."assets/Icons/backspace@2x.png"]
+hash = "25d890617aef926f95b2c8d55743ba649d90234e97fb0b26c9389a53e39077e5"
+id = 138778098643510
+slice = [[0, 0], [32, 32]]
+packable = true
+
+[inputs."assets/Icons/backspace@3x.png"]
+hash = "650b191d0db1a844c660e6ef3d7c149b7f4c56d0a96b0e44f6a7dc5f7f5511c0"
+id = 113892098394283
+slice = [[0, 0], [48, 48]]
+packable = true
+
+[inputs."assets/Icons/check_circle.png"]
+hash = "120031fa4356fe24dc402f7dba671693e9e91d0091c1ab34b58ba0f2c6bdd83b"
+id = 86839678891530
+slice = [[0, 68], [12, 80]]
+packable = true
+
+[inputs."assets/Icons/check_circle@2x.png"]
+hash = "367bba75c367782b2eef5991e168ac2e63fbddb41f8cd69b4312eaba27d6ce7d"
+id = 138778098643510
+slice = [[0, 132], [24, 156]]
+packable = true
+
+[inputs."assets/Icons/check_circle@3x.png"]
+hash = "a1b53e3a646e886f36cb6088fcffb3ed4275fee3fc49632087132fe0c383b841"
+id = 113892098394283
+slice = [[0, 196], [36, 232]]
+packable = true
+
+[inputs."assets/Icons/cube.png"]
+hash = "f54bab27d8ffbc498410fef459887979ad4a025fae6e47be675a3e08478ba519"
+id = 86839678891530
+slice = [[17, 0], [33, 16]]
+packable = true
+
+[inputs."assets/Icons/cube@2x.png"]
+hash = "663b11d2d73a060c5ffdb2312736552a1cef273cde2d54c64e6cdd97cae4ef44"
+id = 138778098643510
+slice = [[33, 0], [65, 32]]
+packable = true
+
+[inputs."assets/Icons/cube@3x.png"]
+hash = "377765cc119f1b409e60277d11ac039181a67ec12a9fbff2b7bec5af46370c64"
+id = 113892098394283
+slice = [[49, 0], [97, 48]]
+packable = true
+
+[inputs."assets/Icons/fabric.png"]
+hash = "ca047065309ea48c177c654b3637b6eff31d96239c350c73f73fc185ce41ef36"
+id = 86839678891530
+slice = [[0, 17], [16, 33]]
+packable = true
+
+[inputs."assets/Icons/fabric@2x.png"]
+hash = "75c9df643ff9e5fbe207fe926e7e7f7891376811ce5c8448d9f8fcceb7e67aac"
+id = 138778098643510
+slice = [[0, 33], [32, 65]]
+packable = true
+
+[inputs."assets/Icons/fabric@3x.png"]
+hash = "393644368032ca0b3073f737ee8af1566fdd809325ac30e3caa2339e0b503e5d"
+id = 113892098394283
+slice = [[0, 49], [48, 97]]
+packable = true
+
+[inputs."assets/Icons/lock.png"]
+hash = "aa6dca8cdfc536e4b6a843601639e82453974f1c7bb7d31b3ca19aace4dc2277"
+id = 86839678891530
+slice = [[34, 0], [50, 16]]
+packable = true
+
+[inputs."assets/Icons/lock@2x.png"]
+hash = "da7a0ea97d3ff01a093e07463317140027d5ba0850648318c53da0fca1b110a2"
+id = 138778098643510
+slice = [[66, 0], [98, 32]]
+packable = true
+
+[inputs."assets/Icons/lock@3x.png"]
+hash = "d6c3a28418a5bf863740b02288713e701dc7d11ceb421316760f05f94e263978"
+id = 113892098394283
+slice = [[98, 0], [146, 48]]
+packable = true
+
+[inputs."assets/Icons/material.png"]
+hash = "4a92b71d669185ceeae4ba72162f7c09cfd9e681f9236f4345bb84dcc6f2943c"
+id = 86839678891530
+slice = [[17, 17], [33, 33]]
+packable = true
+
+[inputs."assets/Icons/material@2x.png"]
+hash = "c8aa7aa5bb4e20be9752a61cfdd0bf37efad59c7fe56fc648565dee56c4cb5e5"
+id = 138778098643510
+slice = [[33, 33], [65, 65]]
+packable = true
+
+[inputs."assets/Icons/material@3x.png"]
+hash = "79307c867eef053de86381a8f1cb90e9a72b2152a4af970c7a01b06af8cba72f"
+id = 113892098394283
+slice = [[49, 49], [97, 97]]
+packable = true
+
+[inputs."assets/Icons/search.png"]
+hash = "55f1ebf8e565833f963c00df1aa2a16e9c06963cc01316ad38ff0aa5098d9e20"
+id = 86839678891530
+slice = [[0, 34], [16, 50]]
+packable = true
+
+[inputs."assets/Icons/search@2x.png"]
+hash = "3a8d45f43ddb8d80515e47b18d3e1593fb4aafc6276b8a32c0b239a87e1a7a50"
+id = 138778098643510
+slice = [[0, 66], [32, 98]]
+packable = true
+
+[inputs."assets/Icons/search@3x.png"]
+hash = "8e7bc95becf2335ffdec77470c07085de3eecfab8ca3b84fcb103b7be7e39478"
+id = 113892098394283
+slice = [[0, 98], [48, 146]]
+packable = true
+
+[inputs."assets/Icons/settings.png"]
+hash = "f74446fd4fb25738374584c2aae4a9199090d63aed0278c7eba5105ca1714ffa"
+id = 86839678891530
+slice = [[51, 0], [67, 16]]
+packable = true
+
+[inputs."assets/Icons/settings@2x.png"]
+hash = "594ecb2e110404c2ad67d65a7889fe69ea02fab5426384d5012d2be388656b83"
+id = 138778098643510
+slice = [[99, 0], [131, 32]]
+packable = true
+
+[inputs."assets/Icons/settings@3x.png"]
+hash = "3edc64088ad5f2e7514f52af8e16c8c6cb058ea49f6d75d8bd553a11a2ab83ae"
+id = 113892098394283
+slice = [[147, 0], [195, 48]]
+packable = true
+
+[inputs."assets/Icons/target.png"]
+hash = "2899cf313c906cc930c3be20961cf8cf98b87dd557c7046245971d1a1cf0754b"
+id = 86839678891530
+slice = [[34, 17], [50, 33]]
+packable = true
+
+[inputs."assets/Icons/target@2x.png"]
+hash = "afae73528b5d528cad95464ad775276f97342bedd0674df57bb484a411d82f82"
+id = 138778098643510
+slice = [[66, 33], [98, 65]]
+packable = true
+
+[inputs."assets/Icons/target@3x.png"]
+hash = "79a9ed29d6683177a87f8cd04e3cc0a805acdd0ff60680a1c8abbb4fe57c7bf0"
+id = 113892098394283
+slice = [[98, 49], [146, 97]]
+packable = true
+
+[inputs."assets/Icons/texture.png"]
+hash = "4cb3445d0f0c09b2fe8f30ab6fa58fd5bdac45e178ad235b2f6cacfbc95973e3"
+id = 86839678891530
+slice = [[17, 34], [33, 50]]
+packable = true
+
+[inputs."assets/Icons/texture@2x.png"]
+hash = "14fa714f433f343d05ecf3eb442511afba99875e14cc081fe6f083cc2cc88172"
+id = 138778098643510
+slice = [[33, 66], [65, 98]]
+packable = true
+
+[inputs."assets/Icons/texture@3x.png"]
+hash = "ef28dd0ee8f54e19afe25fc6490748ce9f8dc090701d9ff96804fd5e566c3f0a"
+id = 113892098394283
+slice = [[49, 98], [97, 146]]
+packable = true
+
+[inputs."assets/Icons/view_grid.png"]
+hash = "d1cf27785be922f35c1778b50914e06f8059023911f633d110f219af11e810f0"
+id = 86839678891530
+slice = [[0, 51], [16, 67]]
+packable = true
+
+[inputs."assets/Icons/view_grid@2x.png"]
+hash = "a9d083b507b86af65c95e2c35043fa100e327adb82938ac0117db7f7bfc74f2a"
+id = 138778098643510
+slice = [[0, 99], [32, 131]]
+packable = true
+
+[inputs."assets/Icons/view_grid@3x.png"]
+hash = "607975a4f3b2ab8240623dbc4100972bdd359b278c6c17a262bdae289ca95e87"
+id = 113892098394283
+slice = [[0, 147], [48, 195]]
+packable = true
+
+[inputs."assets/Icons/view_list.png"]
+hash = "8de55709ad268a2afdbc1bc6888ab9844d3e398db88a855b176083e07adbc030"
+id = 86839678891530
+slice = [[68, 0], [84, 16]]
+packable = true
+
+[inputs."assets/Icons/view_list@2x.png"]
+hash = "d3e3c0de75b6cee10da46ead0495ac6a0d71177f1110226e2d2f8ad92f9c26f8"
+id = 138778098643510
+slice = [[132, 0], [164, 32]]
+packable = true
+
+[inputs."assets/Icons/view_list@3x.png"]
+hash = "6cd52cb9d92be66b8dfd4437896fa5c75c0c2fabc583490d0a6f03d8e8edb6b1"
+id = 113892098394283
+slice = [[196, 0], [244, 48]]
+packable = true
+
+[inputs."assets/KeyCodeIcons/command_key.png"]
+hash = "d3fe0b9e1dec08813502e6b9145b6990c39f75aae3f93c20099b57bb82265814"
+id = 86839678891530
+slice = [[51, 17], [65, 31]]
+packable = true
+
+[inputs."assets/KeyCodeIcons/command_key@2x.png"]
+hash = "bfb07a81dc1eb214f5390a3cdddce1b012a03b7af9bede89fd191dae386ba179"
+id = 138778098643510
+slice = [[99, 33], [127, 61]]
+packable = true
+
+[inputs."assets/KeyCodeIcons/command_key@3x.png"]
+hash = "c2bab5e8dddc74ac799b3371f8efa2195270e6b0777adc8d29b2cc78d4e8e287"
+id = 113892098394283
+slice = [[147, 49], [189, 91]]
+packable = true
+
+[inputs."assets/KeyCodeIcons/option_key.png"]
+hash = "f22165182218dbce8f3ce53b5d0b7cd20532a3fcf795d9d1423f24bcb1b7833e"
+id = 86839678891530
+slice = [[34, 34], [48, 48]]
+packable = true
+
+[inputs."assets/KeyCodeIcons/option_key@2x.png"]
+hash = "edca6971df99a497f81d3c86677d50c8752b3c4383732d9bfa9d70ec5e924dca"
+id = 138778098643510
+slice = [[66, 66], [94, 94]]
+packable = true
+
+[inputs."assets/KeyCodeIcons/option_key@3x.png"]
+hash = "d683951ba960ada0ec010f10be2460f42d3422cc52ad06cf910122ad16a35e6d"
+id = 113892098394283
+slice = [[98, 98], [140, 140]]
+packable = true
+
+[inputs."assets/KeyCodeIcons/shift_key.png"]
+hash = "4e5e19204f04894af9d0bfbc33ff9b54469501612f2ae998e90eb2e1f9f41974"
+id = 86839678891530
+slice = [[17, 51], [31, 65]]
+packable = true
+
+[inputs."assets/KeyCodeIcons/shift_key@2x.png"]
+hash = "7bcde47ff5401e3de3e9e225d4d7c72e8c9e27c14949f66c13577b24c4d169f2"
+id = 138778098643510
+slice = [[33, 99], [61, 127]]
+packable = true
+
+[inputs."assets/KeyCodeIcons/shift_key@3x.png"]
+hash = "00b88572015d4b04987b88c30f3769694d6e1cb7283c1e11938765b9d2dd3fce"
+id = 113892098394283
+slice = [[49, 147], [91, 189]]
+packable = true
+
+[inputs."assets/Misc/arrow_up.png"]
+hash = "6c58e3cce17db25408b1c735a36616a8e3508e92d44c2ded16544caba5d230bf"
+id = 17474608004
+packable = false
+
+[inputs."assets/Misc/arrow_up@2x.png"]
+hash = "8ef2744c4344ddeb935f7c202c6693cde08c9e5452761fe06147cd92977aa5c3"
+id = 17474609344
+packable = false
+
+[inputs."assets/Misc/arrow_up@3x.png"]
+hash = "7fa7cb0109570e1fce87459bb11d585509ef65b373c4448f3c4be0c2d33bb81b"
+id = 17474610049
+packable = false
+
+[inputs."assets/Misc/button_background.png"]
+hash = "c3670e83bd7c46cc786dfec00a70ba8b5bea2152647ffcf8332dd5124e7c7ff3"
+id = 17636451974
+packable = false
+
+[inputs."assets/Misc/button_background@2x.png"]
+hash = "1d5fe97ba3df4f0ed06ec5e8538a6b799e9ef0223510b81b47b1a5858f366c86"
+id = 17636452174
+packable = false
+
+[inputs."assets/Misc/button_background@3x.png"]
+hash = "3ed39a467693f0c0f3c975617ea8702d7b759d89a5c17462bf1d7eb931fda190"
+id = 17636452541
+packable = false
+
+[inputs."assets/Misc/button_border.png"]
+hash = "d8ac0a41804280b3a5f9d0271e1e33bd190fe591cfc46d0e85be3985a9ee92ab"
+id = 17636452074
+packable = false
+
+[inputs."assets/Misc/button_border@2x.png"]
+hash = "7fb191937cd6650bba53d748e7d12b0d75fbd5585c609eaeaea5aeac87ff4d88"
+id = 17636452403
+packable = false
+
+[inputs."assets/Misc/button_border@3x.png"]
+hash = "a1e60c2ed214abb669f8c51fbbd933f175bc14d37cf667c13361c7afd570aa12"
+id = 17636452647
+packable = false
+
+[inputs."assets/Misc/chevron_up.png"]
+hash = "c2e78096beb3e0e8bb36cd56616199d5eda6f629465f62995438686c1b2e2d5b"
+id = 17425186706
+packable = false
+
+[inputs."assets/Misc/chevron_up@2x.png"]
+hash = "edd1dd899382291bb8df7c41b03633c263db81439c334fd3240567fc364a82a3"
+id = 17425188555
+packable = false
+
+[inputs."assets/Misc/chevron_up@3x.png"]
+hash = "e5f620e03ad381217a340ccc1410f378fb1b1bd78a5866144e967eb54fd0001f"
+id = 17425189240
+packable = false
+
+[inputs."assets/Misc/circle.png"]
+hash = "3d05144c4b058c3a5cb4b6958031483a5b961c0c4b6d25c12794ce776e65068a"
+id = 17425186829
+packable = false
+
+[inputs."assets/Misc/circle@2x.png"]
+hash = "e50399bc9e844bf212c8508b33cce1b6b01978f4eb5a6bfccc0c9a366a095ba0"
+id = 17425188692
+packable = false
+
+[inputs."assets/Misc/circle@3x.png"]
+hash = "ef40a0e8bbb7b19c6be26e9a754f94ebc65027b71fb1187e2d8c275853a70401"
+id = 17425189333
+packable = false
+
+[inputs."assets/Misc/open_new_black.png"]
+hash = "494b6cb9d74ee654df92999d888e9ea3908c1320da01f97189f0f73d1e0bce63"
+id = 107873320475161
+packable = false
+
+[inputs."assets/Misc/open_new_black@2x.png"]
+hash = "537e22fd97e0b652743d251a3e17d7e03e285c242dde0624098a97d3517ffa70"
+id = 127311064199869
+packable = false
+
+[inputs."assets/Misc/open_new_black@3x.png"]
+hash = "641f1fd8ea52f8df4afbd164bd92ee58938de19b409955ab2e48acc3de187578"
+id = 72088669340939
+packable = false
+
+[inputs."assets/Misc/open_new_white.png"]
+hash = "af0f9cb82aebf39bb412641f8bb7224aae8f3b7e4bb8423cd7808541ad41f77b"
+id = 88523483056963
+packable = false
+
+[inputs."assets/Misc/open_new_white@2x.png"]
+hash = "49e5bd5ca537c8cad7178c769e030c7bf38fc5c47e4c7a9fc1374ca7cc6df145"
+id = 129328882365225
+packable = false
+
+[inputs."assets/Misc/open_new_white@3x.png"]
+hash = "729fcd27cf8c289294720bb9261f83093f6eae2d1ce3514b163ebae3137aa947"
+id = 82708698261522
+packable = false
+
+[inputs."assets/Misc/scrollbar_bottom.png"]
+hash = "7c71054d169a982f58807bedd747f6ffb0d104cc04958453809def470ae551ec"
+id = 115322491188671
+packable = false
+
+[inputs."assets/Misc/scrollbar_bottom@2x.png"]
+hash = "0081f647a70d19f43b34320698f79c35e0e731f0305914bc7ef4fecd9c02a43b"
+id = 89880727979248
+packable = false
+
+[inputs."assets/Misc/scrollbar_bottom@3x.png"]
+hash = "911d40d48c3223935d827284e138d7201fd338ef542704f82c01d44e7d590fcd"
+id = 102562334568169
+packable = false
+
+[inputs."assets/Misc/scrollbar_middle.png"]
+hash = "5c921be38c91a8c93e0dd47165bcbd23e644f251c5b157628145074738c85f17"
+id = 109303061882465
+packable = false
+
+[inputs."assets/Misc/scrollbar_middle@2x.png"]
+hash = "de39d60806727b6e0e660434ebdb5bbd4883d83d312af1467b454ce4ff0421bc"
+id = 127852681752250
+packable = false
+
+[inputs."assets/Misc/scrollbar_middle@3x.png"]
+hash = "0b51b550e99f2c888065dae44bed0da18fc0fbb38d827e1f2e542852b0a18714"
+id = 100869915138012
+packable = false
+
+[inputs."assets/Misc/scrollbar_top.png"]
+hash = "cdca2f4e480257b86321f9484aa024d1b196066a525925957083ee7ccc8c10d0"
+id = 71234954516539
+packable = false
+
+[inputs."assets/Misc/scrollbar_top@2x.png"]
+hash = "38197e5074786e75c99e620a31ed89486fffe9e25d968884fe30f87704658e9c"
+id = 101338319828821
+packable = false
+
+[inputs."assets/Misc/scrollbar_top@3x.png"]
+hash = "fe59107ab73a2892bcf8f04aa14e3e127d4a8362863955cd7121660afcd987c1"
+id = 88488654760234
+packable = false
+
+[inputs."assets/Misc/surface_hinge_icon.png"]
+hash = "921ed6a1464c409a76bd5b41128786d77bc296e3b38b2d2bf64b6633eb418e09"
+id = 128524100674144
+packable = false
+
+[inputs."assets/Misc/surface_hinge_icon@2x.png"]
+hash = "8ca172290715d6486df59d8f34c4e85b61e464d4f5fcf0ce05e3ae5e68cf6938"
+id = 81427161370151
+packable = false
+
+[inputs."assets/Misc/surface_hinge_icon@3x.png"]
+hash = "ab42041400b51c896ab9f878463f61f5cc86181019eb8e53c01795e3244df926"
+id = 72355286692240
+packable = false
+
+[inputs."assets/Misc/surface_inlet_icon.png"]
+hash = "dfe1dbde20bc66b420a60c9eb26e0e1d41edad6bd4f69ecdfffa7505c5322619"
+id = 107537997707713
+packable = false
+
+[inputs."assets/Misc/surface_inlet_icon@2x.png"]
+hash = "70cc82de04a36c9d85b1b3259d2e4ea2f593f7fa5a598c17e2d6d8f62f1c29c0"
+id = 140484853256752
+packable = false
+
+[inputs."assets/Misc/surface_inlet_icon@3x.png"]
+hash = "35dcb4aad28f83d39aea4ab9742abd241dbbdbd50cec40e031347eb17316184b"
+id = 81489806969762
+packable = false
+
+[inputs."assets/Misc/surface_motor_icon.png"]
+hash = "a155264c04ffb40fb0725986e443836df1947f724cd6b8e1627bb77251667e9a"
+id = 76806182752607
+packable = false
+
+[inputs."assets/Misc/surface_motor_icon@2x.png"]
+hash = "9b49c5c0dd1ad62f6b807bf3bc710cc23cf8201a4b3ec754ff7f33106b22f079"
+id = 104522696449142
+packable = false
+
+[inputs."assets/Misc/surface_motor_icon@3x.png"]
+hash = "005ded78a72005254069f2014fbfa6f394d5d1b3b82c8721068ef04ec129c37c"
+id = 78094017580512
+packable = false
+
+[inputs."assets/Misc/surface_smooth_icon.png"]
+hash = "424ba5c1783a94b6d3fd4cbed3f290fc26231f4a250c26f27f7fa763f0350996"
+id = 90575737342725
+packable = false
+
+[inputs."assets/Misc/surface_smooth_icon@2x.png"]
+hash = "a872e31121361dcc42543b0f3eda34f256ae17de1c9e408ae532c8cddc89ae32"
+id = 110593472063370
+packable = false
+
+[inputs."assets/Misc/surface_smooth_icon@3x.png"]
+hash = "9fa2556c5a571eb8453c1dde02365036ae8d6b78ade713addd0674e3bb33c944"
+id = 118807181091366
+packable = false
+
+[inputs."assets/Misc/surface_studs_icon.png"]
+hash = "65cd894cfa79dbba7490e0d13905a420f44e5fda129e4c0be6c859f367f9e6af"
+id = 84836797972487
+packable = false
+
+[inputs."assets/Misc/surface_studs_icon@2x.png"]
+hash = "462c36b935033116e9f8fb16379dece2b26d3511bbf2a4505ee4cf1e23419f61"
+id = 95393101570348
+packable = false
+
+[inputs."assets/Misc/surface_studs_icon@3x.png"]
+hash = "a9c3090d89727bbc640447c11d146cbb0b4afa34b95b486da0c1146ce5285cab"
+id = 84149269450117
+packable = false
+
+[inputs."assets/Misc/surface_universal_icon.png"]
+hash = "e6c7fa5abf0464cbd55f6b73c733d23454bb46f698d57c07fe0d988c1676309b"
+id = 114250725100863
+packable = false
+
+[inputs."assets/Misc/surface_universal_icon@2x.png"]
+hash = "2bad14b28bb46c3bc5522151143a50222325ecdcf20334aceff43f23c1bb7867"
+id = 135481034251137
+packable = false
+
+[inputs."assets/Misc/surface_universal_icon@3x.png"]
+hash = "995ed442a285b7e7e4147abfca585677b2949d897841cbe077d9794bfeeeada2"
+id = 78083330465136
+packable = false
+
+[inputs."assets/Misc/surface_weld_icon.png"]
+hash = "4ffdc9bff6dad594ee9e5398535d766bef6ac25660bc6593cdb5b9cbb21ed7ae"
+id = 93285422986614
+packable = false
+
+[inputs."assets/Misc/surface_weld_icon@2x.png"]
+hash = "92f7955bdf29bd173932ebd9f4eaeb58dd9961fccfd5caed08ef1fe8cb27d58e"
+id = 135174067278309
+packable = false
+
+[inputs."assets/Misc/surface_weld_icon@3x.png"]
+hash = "4331f72fdf702e28a9673493d6df00a3b1a95a2b4f05e101633ab93af28c826f"
+id = 115722506965483
+packable = false
+
+[inputs."assets/ProductIcons/classic_dark_mode_icon.png"]
+hash = "fd5ab0f790a56c72d208ed2d2f946d333233369b9d746486b65b1e0b5af109b0"
+id = 123752635759705
+packable = false
+
+[inputs."assets/ProductIcons/classic_dark_mode_icon@2x.png"]
+hash = "518adde96b65a202d0923c6c56e85e17ce6294095d31d8d262c7ff5c1a2f089a"
+id = 136243987566515
+packable = false
+
+[inputs."assets/ProductIcons/classic_dark_mode_icon@3x.png"]
+hash = "ca8fef457c6f8e21a9854010988cbc70234872ff01933c9eb504a4df82ebbbc6"
+id = 122403614975045
+packable = false
+
+[inputs."assets/ProductIcons/classic_light_mode_icon.png"]
+hash = "5a33f7380d9ad711c346344335aed51e29883d9c0425df97ca385269d2ff0876"
+id = 129071397894994
+packable = false
+
+[inputs."assets/ProductIcons/classic_light_mode_icon@2x.png"]
+hash = "a5aa48fba0c85f7f0e316b85ef9af5b220c55025bfa67d56d797e064c24f146d"
+id = 70944267113948
+packable = false
+
+[inputs."assets/ProductIcons/classic_light_mode_icon@3x.png"]
+hash = "86d1cbdac7ebb354a0550d65b539463be419f85016850d7ec2b6b6d9eafdfe7b"
+id = 104713910200707
+packable = false
+
+[inputs."assets/ProductIcons/dark_mode_dev_icon.png"]
+hash = "5b68999d7acc19228b075b44e4bb669b3ab6dea439cf0c7044eea9da1c40f1cd"
+id = 18638232343
+packable = false
+
+[inputs."assets/ProductIcons/dark_mode_dev_icon@2x.png"]
+hash = "afff7af9e510ad2708aff4f15527945296c0eaad60d1884e83f65358b8d2e989"
+id = 18638233302
+packable = false
+
+[inputs."assets/ProductIcons/dark_mode_dev_icon@3x.png"]
+hash = "f560aa1c883e1e4d7ed174c637736016d9e7bce92ff60240638dccb630b04b10"
+id = 18638233637
+packable = false
+
+[inputs."assets/ProductIcons/dark_mode_dev_icon_512.png"]
+hash = "f75c82c365e2b37c7765410483f322c3b98f3f51271a8bc7d27c0081bcb838ca"
+id = 18638232588
+packable = false
+
+[inputs."assets/ProductIcons/dark_mode_icon.png"]
+hash = "0dc61871643c4fa552416c3b30d93b30226574f1822309896d984cb3f3a4c356"
+id = 17474608218
+packable = false
+
+[inputs."assets/ProductIcons/dark_mode_icon@2x.png"]
+hash = "75121d619ac8aa19989dc7d168e010e50fcaa7b57a680ac6ef555b928464ab19"
+id = 17474609602
+packable = false
+
+[inputs."assets/ProductIcons/dark_mode_icon@3x.png"]
+hash = "efc9427fe0e95917111755e83ed4158847f6ddb64580d9674dc5a9a6a7e4651a"
+id = 17474610265
+packable = false
+
+[inputs."assets/ProductIcons/dark_mode_icon_512.png"]
+hash = "c81a908a42a260afb2b67cc2907aae4fbbc713a7af38015fa55d72d9811d7f0b"
+id = 17474608557
+packable = false
+
+[inputs."assets/ProductIcons/light_mode_dev_icon.png"]
+hash = "a2684f350219b2d19397f3567591cb7d5bc1390edab1ee9039c7eea249636491"
+id = 18638232812
+packable = false
+
+[inputs."assets/ProductIcons/light_mode_dev_icon@2x.png"]
+hash = "7c30bc5f11b1a5890c8723ef50fb12637341695132a2afba085a8930156b5944"
+id = 18638233482
+packable = false
+
+[inputs."assets/ProductIcons/light_mode_dev_icon@3x.png"]
+hash = "f1ef3ee67d9de5fba2d24caa835b37d347bbc98502a35234dc0cd063f71e1876"
+id = 18638233786
+packable = false
+
+[inputs."assets/ProductIcons/light_mode_dev_icon_512.png"]
+hash = "79a0850787a40f4f9700a5fc6fe496f42df346804f36f6b00cfdf468de4ce20d"
+id = 18638233038
+packable = false
+
+[inputs."assets/ProductIcons/light_mode_icon.png"]
+hash = "4597ce240ca90411febe7661d87ccc500adfa1e65939b8e890589c34be0fd2bc"
+id = 17474608797
+packable = false
+
+[inputs."assets/ProductIcons/light_mode_icon@2x.png"]
+hash = "92e945046e43b6bb4a009db129b8d571d495e82377c20ab390780b0b224a9b5d"
+id = 17474609782
+packable = false
+
+[inputs."assets/ProductIcons/light_mode_icon@3x.png"]
+hash = "122363368d80f5d088dd894807fd8b014418ad5a0f0deca02683dd15f4fae181"
+id = 17474610411
+packable = false
+
+[inputs."assets/ProductIcons/light_mode_icon_512.png"]
+hash = "c284d6da137c981813b6252c997c8436b498ea59e10bbf6755b62ff9e3e9000f"
+id = 17474609049
+packable = false
+
+[inputs."assets/ProductIcons/mono_dark_mode_icon.png"]
+hash = "6599366ea5b21e7eeef3cb4d05971b56d897705accbb90a3168c55115d1e7209"
+id = 117711683536506
+packable = false
+
+[inputs."assets/ProductIcons/mono_dark_mode_icon@2x.png"]
+hash = "496255263c8d313d7fb0be7b14e70d0d4367998e7c9ac40c7ab4af2ab6d441aa"
+id = 140477995063714
+packable = false
+
+[inputs."assets/ProductIcons/mono_dark_mode_icon@3x.png"]
+hash = "92ee46a9c22964c0715e6ec7623cf20a724bb1aa9c172c0a7ebdf568b268900e"
+id = 114737280568088
+packable = false
+
+[inputs."assets/ProductIcons/mono_light_mode_icon.png"]
+hash = "fd93f7d03433fe48820f618f4438863fb3206e41a94b5679a0f430debfc3e761"
+id = 121307472253145
+packable = false
+
+[inputs."assets/ProductIcons/mono_light_mode_icon@2x.png"]
+hash = "e9205eb38a8088eaa0f788a8f9bd2ae74f72ed668d372b8a1c0b5138eca83105"
+id = 113622051155526
+packable = false
+
+[inputs."assets/ProductIcons/mono_light_mode_icon@3x.png"]
+hash = "635464ffbc914f3983455df3206a6f56a7eb5415a82ea0ff7d2f1a7cebde0496"
+id = 72388051133099
+packable = false

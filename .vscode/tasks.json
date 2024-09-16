@@ -1,0 +1,100 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build to Plugins (Skip Packages)",
+            "detail": "Builds the plugin to the local Studio plugins directory, skipping reinstallation of packages.",
+            "type": "shell",
+            "command": "lune",
+            "args": [
+                "run",
+                "build",
+                "--",
+                "--dev",
+                "--no-react-dev",
+                "--skip-packages"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "icon": {
+                "id": "sparkle"
+            },
+        },
+        {
+            "label": "Watch & Build Dev Plugin",
+            "detail": "Builds the plugin to the local Studio plugins directory and rebuilds on file changes.",
+            "type": "shell",
+            "command": "lune",
+            "args": [
+                "run",
+                "build",
+                "--",
+                "--dev",
+                "--watch",
+                "--react-dev"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "icon": {
+                "id": "sparkle"
+            },
+        },
+        {
+            "label": "Watch & Build Plugin (no Dev)",
+            "detail": "Builds the plugin to the local Studio plugins directory and rebuilds on file changes.",
+            "type": "shell",
+            "command": "lune",
+            "args": [
+                "run",
+                "build",
+                "--",
+                "--dev",
+                "--watch",
+                "--no-react-dev"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "icon": {
+                "id": "sparkle"
+            },
+        },
+        {
+            "label": "Package Plugin (for Release)",
+            "detail": "Creates a plugin binary for distribution in the project root directory.",
+            "type": "shell",
+            "command": "lune",
+            "args": [
+                "run",
+                "build"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "icon": {
+                "id": "package"
+            },
+        },
+        {
+            "label": "Serve (Hoarcekat)",
+            "detail": "Starts the local development server.",
+            "type": "shell",
+            "command": "rojo",
+            "args": [
+                "serve",
+                "serve.project.json"
+            ],
+            "group": "none",
+            "icon": {
+                "id": "rocket"
+            },
+            "isBackground": true
+        }
+    ]
+}

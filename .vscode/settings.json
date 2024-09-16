@@ -1,0 +1,13 @@
+{
+  "luau-lsp.require.mode": "relativeToFile",
+  "luau-lsp.require.directoryAliases": {
+    "@lune/": "~/.lune/.typedefs/0.8.0/",
+    "@pkgs/": "Packages/",
+    "@root/": "src/"
+  },
+  "[luau]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+  }
+}

@@ -1,0 +1,32 @@
+{
+    "rules": [
+      {
+        "rule": "convert_require",
+        "current": {
+          "name": "path",
+          "sources": {
+            "@pkgs": "Packages",
+            "@root": "src"
+          }
+        },
+        "target": {
+          "name": "roblox",
+          "rojo_sourcemap": "./sourcemap.json",
+          "indexing_style": "property"
+        }
+      },
+      "compute_expression",
+      "convert_index_to_field",
+      "filter_after_early_return",
+      "remove_comments",
+      "remove_debug_profiling",
+      "remove_empty_do",
+      "remove_function_call_parens",
+      "remove_nil_declaration",
+      "remove_spaces",
+      "remove_types",
+      "remove_unused_if_branch",
+      "remove_unused_variable",
+      "remove_unused_while"
+    ]
+  }

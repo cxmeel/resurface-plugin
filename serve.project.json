@@ -1,0 +1,13 @@
+{
+    "name": "ResurfaceServe",
+    "tree": {
+        "$className": "DataModel",
+        "$ignoreUnknownInstances": true,
+        "ServerStorage": {
+            "$ignoreUnknownInstances": true,
+            "Resurface": {
+                "$path": "default.project.json"
+            }
+        }
+    }
+}

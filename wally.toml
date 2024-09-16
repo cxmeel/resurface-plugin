@@ -1,0 +1,15 @@
+[package]
+name = "cxmeel/resurface"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[product]
+display_name = "Resurface"
+description = "A tool to change the Surfaces of objects."
+
+[dependencies]
+Janitor = "howmanysmall/janitor@1.17.0"
+React = "jsdotlua/react@17.1.0"
+ReactRoblox = "jsdotlua/react-roblox@17.1.0"
+ReactSpring = "chriscerie/react-spring@2.0.0"

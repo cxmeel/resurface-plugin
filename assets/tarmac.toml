@@ -1,0 +1,25 @@
+name = "ResurfaceAssets"
+
+[[inputs]]
+glob = "Icons/**/*.png"
+packable = true
+codegen = true
+codegen-path = "../src/Assets/IconMap.luau"
+
+[[inputs]]
+glob = "ProductIcons/**/*.png"
+packable = false
+codegen = true
+codegen-path = "../src/Assets/IconMap.luau"
+
+[[inputs]]
+glob = "Misc/**/*.png"
+packable = false
+codegen = true
+codegen-path = "../src/Assets/IconMap.luau"
+
+[[inputs]]
+glob = "KeyCodeIcons/**/*.png"
+packable = true
+codegen = true
+codegen-path = "../src/Assets/IconMap.luau"
