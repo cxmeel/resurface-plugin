@@ -14,8 +14,7 @@ local function LeftRightWirebox(props: {
 	end
 
 	local size = props.part.Size
-	local cframe = props.part.CFrame
-	local origin = CFrame.new(Vector3.zero, cframe.LookVector)
+	local isWedge = props.part:IsA("WedgePart")
 
 	local x = size.X / 2
 	local y = size.Y / 2
@@ -26,38 +25,51 @@ local function LeftRightWirebox(props: {
 
 	local side = props.normal == Enum.NormalId.Right and 1 or -1
 
+	local topSize = sizeZ
+	local topCframe = CFrame.new(side * x, y, 0)
+
+	if isWedge then
+		local hypotenuse = math.sqrt(size.Y ^ 2 + size.Z ^ 2)
+
+		topSize =
+			Vector3.new(LINE_THICKNESS, LINE_THICKNESS, hypotenuse + LINE_THICKNESS)
+		topCframe = CFrame.new(side * x, 0, 0)
+			* CFrame.Angles(-math.atan2(size.Y, size.Z), 0, 0)
+	end
+
 	return e("Folder", nil, {
 		top = e("BoxHandleAdornment", {
 			Adornee = props.part,
 			Color3 = props.color,
-			CFrame = origin * CFrame.new(side * x, y, 0),
-			Size = sizeZ,
+			CFrame = topCframe,
+			Size = topSize,
 			ZIndex = 2,
 		}),
 
 		bottom = e("BoxHandleAdornment", {
 			Adornee = props.part,
 			Color3 = props.color,
-			CFrame = origin * CFrame.new(side * x, -y, 0),
+			CFrame = CFrame.new(side * x, -y, 0),
 			Size = sizeZ,
 			ZIndex = 2,
 		}),
 
-		left = e("BoxHandleAdornment", {
+		left = (not isWedge or (isWedge and side == 1)) and e("BoxHandleAdornment", {
 			Adornee = props.part,
 			Color3 = props.color,
-			CFrame = origin * CFrame.new(side * x, 0, side * z),
+			CFrame = CFrame.new(side * x, 0, side * z),
 			Size = sizeY,
 			ZIndex = 2,
 		}),
 
-		right = e("BoxHandleAdornment", {
-			Adornee = props.part,
-			Color3 = props.color,
-			CFrame = origin * CFrame.new(side * x, 0, -side * z),
-			Size = sizeY,
-			ZIndex = 2,
-		}),
+		right = (not isWedge or (isWedge and side == -1))
+			and e("BoxHandleAdornment", {
+				Adornee = props.part,
+				Color3 = props.color,
+				CFrame = CFrame.new(side * x, 0, -side * z),
+				Size = sizeY,
+				ZIndex = 2,
+			}),
 	})
 end
 
@@ -71,8 +83,6 @@ local function FrontBackWirebox(props: {
 	end
 
 	local size = props.part.Size
-	local cframe = props.part.CFrame
-	local origin = CFrame.new(Vector3.zero, cframe.LookVector)
 
 	local x = size.X / 2
 	local y = size.Y / 2
@@ -87,7 +97,7 @@ local function FrontBackWirebox(props: {
 		top = e("BoxHandleAdornment", {
 			Adornee = props.part,
 			Color3 = props.color,
-			CFrame = origin * CFrame.new(0, y, side * z),
+			CFrame = CFrame.new(0, y, side * z),
 			Size = sizeX,
 			ZIndex = 2,
 		}),
@@ -95,7 +105,7 @@ local function FrontBackWirebox(props: {
 		bottom = e("BoxHandleAdornment", {
 			Adornee = props.part,
 			Color3 = props.color,
-			CFrame = origin * CFrame.new(0, -y, side * z),
+			CFrame = CFrame.new(0, -y, side * z),
 			Size = sizeX,
 			ZIndex = 2,
 		}),
@@ -103,7 +113,7 @@ local function FrontBackWirebox(props: {
 		left = e("BoxHandleAdornment", {
 			Adornee = props.part,
 			Color3 = props.color,
-			CFrame = origin * CFrame.new(side * x, 0, side * z),
+			CFrame = CFrame.new(side * x, 0, side * z),
 			Size = sizeY,
 			ZIndex = 2,
 		}),
@@ -111,7 +121,7 @@ local function FrontBackWirebox(props: {
 		right = e("BoxHandleAdornment", {
 			Adornee = props.part,
 			Color3 = props.color,
-			CFrame = origin * CFrame.new(-side * x, 0, side * z),
+			CFrame = CFrame.new(-side * x, 0, side * z),
 			Size = sizeY,
 			ZIndex = 2,
 		}),
@@ -128,8 +138,7 @@ local function TopBottomWirebox(props: {
 	end
 
 	local size = props.part.Size
-	local cframe = props.part.CFrame
-	local origin = CFrame.new(Vector3.zero, cframe.LookVector)
+	local isWedge = props.part:IsA("WedgePart")
 
 	local x = size.X / 2
 	local y = size.Y / 2
@@ -140,27 +149,42 @@ local function TopBottomWirebox(props: {
 
 	local side = props.normal == Enum.NormalId.Bottom and -1 or 1
 
+	local leftRightSize = sizeZ
+	local leftRightAngle = CFrame.identity
+	local leftRightHeight = side * y
+	local backCframe = CFrame.new(0, side * y, -z)
+
+	if isWedge and side == 1 then
+		local hypotenuse = math.sqrt(size.Y ^ 2 + size.Z ^ 2)
+
+		leftRightSize =
+			Vector3.new(LINE_THICKNESS, LINE_THICKNESS, hypotenuse + LINE_THICKNESS)
+		leftRightAngle = CFrame.Angles(-math.atan2(size.Y, size.Z), 0, 0)
+		backCframe = CFrame.new(0, -y, -z)
+		leftRightHeight = 0
+	end
+
 	return e("Folder", nil, {
 		left = e("BoxHandleAdornment", {
 			Adornee = props.part,
 			Color3 = props.color,
-			CFrame = origin * CFrame.new(-x, side * y, 0),
-			Size = sizeZ,
+			CFrame = CFrame.new(-x, leftRightHeight, 0) * leftRightAngle,
+			Size = leftRightSize,
 			ZIndex = 2,
 		}),
 
 		right = e("BoxHandleAdornment", {
 			Adornee = props.part,
 			Color3 = props.color,
-			CFrame = origin * CFrame.new(x, side * y, 0),
-			Size = sizeZ,
+			CFrame = CFrame.new(x, leftRightHeight, 0) * leftRightAngle,
+			Size = leftRightSize,
 			ZIndex = 2,
 		}),
 
 		front = e("BoxHandleAdornment", {
 			Adornee = props.part,
 			Color3 = props.color,
-			CFrame = origin * CFrame.new(0, side * y, z),
+			CFrame = CFrame.new(0, side * y, z),
 			Size = sizeX,
 			ZIndex = 2,
 		}),
@@ -168,7 +192,7 @@ local function TopBottomWirebox(props: {
 		back = e("BoxHandleAdornment", {
 			Adornee = props.part,
 			Color3 = props.color,
-			CFrame = origin * CFrame.new(0, side * y, -z),
+			CFrame = backCframe,
 			Size = sizeX,
 			ZIndex = 2,
 		}),
