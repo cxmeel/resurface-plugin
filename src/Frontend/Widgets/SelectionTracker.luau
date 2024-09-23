@@ -20,12 +20,6 @@ local useState = React.useState
 
 local e = React.createElement
 
-local RAYCAST_PARAMS = RaycastParams.new()
-RAYCAST_PARAMS.BruteForceAllSlow = false
-RAYCAST_PARAMS.CollisionGroup = "StudioSelectable"
-RAYCAST_PARAMS.IgnoreWater = true
-RAYCAST_PARAMS.RespectCanCollide = true
-
 local NORMAL_MAP = {
 	[Vector3.yAxis] = Enum.NormalId.Top,
 	[-Vector3.yAxis] = Enum.NormalId.Bottom,
@@ -34,6 +28,12 @@ local NORMAL_MAP = {
 	[-Vector3.zAxis] = Enum.NormalId.Front,
 	[Vector3.zAxis] = Enum.NormalId.Back,
 }
+
+local RAYCAST_PARAMS = RaycastParams.new()
+RAYCAST_PARAMS.BruteForceAllSlow = false
+RAYCAST_PARAMS.CollisionGroup = "StudioSelectable"
+RAYCAST_PARAMS.IgnoreWater = true
+RAYCAST_PARAMS.RespectCanCollide = true
 
 local function containsActionableSelection(selection: { Instance }?, iterated: boolean?)
 	if selection then
@@ -140,18 +140,75 @@ local function SelectionTracker()
 			return
 		end
 
-		local roundedNormal = result.Normal
+		local target: BasePart = result.Instance
+		local normal = target.CFrame:VectorToObjectSpace(result.Normal)
 
-		if roundedNormal then
-			roundedNormal = Vector3.new(
-				math.floor(roundedNormal.X + 0.5),
-				math.floor(roundedNormal.Y + 0.5),
-				math.floor(roundedNormal.Z + 0.5)
-			)
+		local isWedge = target:IsA("WedgePart")
+		local isCornerWedge = target:IsA("CornerWedgePart")
+
+		if target:IsA("Part") then
+			isWedge = target.Shape == Enum.PartType.Wedge
+			isCornerWedge = target.Shape == Enum.PartType.CornerWedge
 		end
 
-		setTargetPart(result.Instance)
-		setTargetNormal(NORMAL_MAP[roundedNormal])
+		if normal then
+			local top = math.floor(normal:Abs():Dot(Vector3.yAxis) + 0.5)
+			local topSign = math.sign(normal.Y)
+
+			local right = math.floor(normal:Abs():Dot(Vector3.xAxis) + 0.5)
+			local rightSign = math.sign(normal.X)
+
+			local front = math.floor(normal:Abs():Dot(Vector3.zAxis) + 0.5)
+			local frontSign = math.sign(normal.Z)
+
+			print({
+				top = top,
+				right = right,
+				front = front,
+			})
+
+			if isCornerWedge then
+				if (top ~= 0 and right ~= 0) or top == 1 then
+					right, top = top, right
+				end
+			end
+
+			if front >= top and front >= right then
+				top, right = 0, 0
+				front *= frontSign
+			elseif right >= top and right >= front then
+				top, front = 0, 0
+				right *= rightSign
+			elseif top >= right and top >= front then
+				right, front = 0, 0
+				top *= topSign
+			end
+
+			if front == 1 then
+				normal = Vector3.zAxis
+			elseif front == -1 then
+				normal = -Vector3.zAxis
+			end
+
+			if top == 1 then
+				normal = Vector3.yAxis
+			elseif top == -1 then
+				normal = -Vector3.yAxis
+			end
+
+			if right == 1 then
+				normal = Vector3.xAxis
+			elseif right == -1 then
+				normal = -Vector3.xAxis
+			end
+		end
+
+		if isWedge and normal == Vector3.yAxis then
+			normal = -Vector3.zAxis
+		end
+
+		setTargetPart(target)
+		setTargetNormal(NORMAL_MAP[normal])
 	end, {
 		connected = isPluginActive,
 	})

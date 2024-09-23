@@ -151,8 +151,13 @@ local function SurfacePickerWidget(props: {
 						selectIndex = foundIndex
 					end
 
-					Preferences.selectedSurface(surfaceTypes[selectIndex])
-					LocalStore.currentWidget(nil)
+					if surfaceTypes[selectIndex] or quickSelectSurfaceType then
+						Preferences.selectedSurface(
+							surfaceTypes[selectIndex] or quickSelectSurfaceType
+						)
+
+						LocalStore.currentWidget(nil)
+					end
 				end,
 			}),
 
