@@ -15,18 +15,6 @@ return {
 			pressed = Color3.new(),
 			disabled = Color3.fromHex("757575"),
 		},
-		accentVariant = {
-			default = Color3.fromHex("8f7807"),
-			hovered = Color3.fromHex("c2a823"),
-			pressed = Color3.fromHex("625204"),
-			disabled = Color3.fromHex("222222"),
-		},
-		onAccentVariant = {
-			default = Color3.new(),
-			hovered = Color3.fromHex("1a1a1a"),
-			pressed = Color3.new(1, 1, 1),
-			disabled = Color3.fromHex("757575"),
-		},
 		button = {
 			default = Color3.fromHex("3c3c3c"),
 			hovered = Color3.fromHex("4a4a4a"),
