@@ -175,4 +175,10 @@ do -- Persistence
 	end)
 end
 
+do
+	if store.selectedSurface() == nil then
+		store.selectedSurface.reset()
+	end
+end
+
 return store
