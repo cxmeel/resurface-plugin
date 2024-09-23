@@ -22,6 +22,12 @@ local useState = React.useState
 
 local e = React.createElement
 
+local RAYCAST_PARAMS = RaycastParams.new()
+RAYCAST_PARAMS.BruteForceAllSlow = false
+RAYCAST_PARAMS.CollisionGroup = "StudioSelectable"
+RAYCAST_PARAMS.IgnoreWater = true
+RAYCAST_PARAMS.RespectCanCollide = true
+
 local function containsActionableSelection(selection: { Instance }?, iterated: boolean?)
 	if selection then
 		for _, object in selection do
@@ -94,7 +100,10 @@ local function SelectionTracker()
 				return
 			end
 
-			if target:IsA("WedgePart") then
+			if
+				target:IsA("WedgePart")
+				or (target:IsA("Part") and target.Shape == Enum.PartType.Wedge)
+			then
 				if normal == Enum.NormalId.Front then
 					normal = Enum.NormalId.Top
 				end
@@ -126,6 +135,43 @@ local function SelectionTracker()
 	end, {
 		connected = isPluginActive,
 	})
+
+	-- useEvent(UserInputService.InputChanged, function(inputObject, gameProcessed)
+	-- 	if
+	-- 		gameProcessed
+	-- 		or inputObject.UserInputType ~= Enum.UserInputType.MouseMovement
+	-- 	then
+	-- 		return
+	-- 	end
+
+	-- 	local camera = workspace.CurrentCamera
+	-- 	local mouseRay =
+	-- 		camera:ViewportPointToRay(inputObject.Position.X, inputObject.Position.Y)
+
+	-- 	local result = workspace:Raycast(
+	-- 		mouseRay.Origin,
+	-- 		mouseRay.Direction * 2048,
+	-- 		RAYCAST_PARAMS
+	-- 	)
+
+	-- 	local isValidTarget = result
+	-- 		and result.Instance:IsA("BasePart")
+	-- 		and not result.Instance.Locked
+
+	-- 	if not isValidTarget then
+	-- 		-- setTargetPart(nil)
+	-- 		-- setTargetNormal(nil)
+
+	-- 		return
+	-- 	end
+
+	-- 	-- print("normal>", result.Normal)
+
+	-- 	-- setTargetPart(result.Instance)
+	-- 	-- setTargetNormal(NORMAL_MAP[roundedNormal])
+	-- end, {
+	-- 	connected = isPluginActive,
+	-- })
 
 	if not isPluginActive or not targetPart then
 		return
