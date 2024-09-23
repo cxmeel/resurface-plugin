@@ -158,6 +158,15 @@ local function FrontBackWirebox(props: {
 	end
 
 	local part = props.part
+
+	local isWedge = part:IsA("WedgePart")
+	local isCornerWedge = part:IsA("CornerWedgePart")
+
+	if part:IsA("Part") then
+		isWedge = part.Shape == Enum.PartType.Wedge
+		isCornerWedge = part.Shape == Enum.PartType.CornerWedge
+	end
+
 	local size = part.Size
 
 	local x = size.X / 2
@@ -191,13 +200,33 @@ local function FrontBackWirebox(props: {
 	local rightSize = sizeY
 	local rightCframe = CFrame.new(side * x, 0, side * z)
 
-	local isCornerWedge = part:IsA("CornerWedgePart")
+	local topSize = sizeX
+	local topCframe = CFrame.new(0, y, side * z)
 
-	if part:IsA("Part") then
-		isCornerWedge = part.Shape == Enum.PartType.CornerWedge
-	end
+	if isWedge and side == -1 then
+		local topPoint = CFrame.new(0, y, z).Position
+		local bottomPoint = CFrame.new(0, -y, -z).Position
 
-	if isCornerWedge then
+		local topBottomMidpoint = (topPoint + bottomPoint) / 2
+
+		topCframe = CFrame.new(topPoint)
+
+		leftSize = Vector3.new(
+			LINE_THICKNESS,
+			LINE_THICKNESS,
+			(topPoint - bottomPoint).Magnitude + LINE_THICKNESS
+		)
+
+		leftCframe = CFrame.new(x, 0, 0) * CFrame.lookAt(topBottomMidpoint, topPoint)
+
+		rightSize = Vector3.new(
+			LINE_THICKNESS,
+			LINE_THICKNESS,
+			(topPoint - bottomPoint).Magnitude + LINE_THICKNESS
+		)
+
+		rightCframe = CFrame.new(-x, 0, 0) * CFrame.lookAt(topBottomMidpoint, topPoint)
+	elseif isCornerWedge then
 		topVisible = false
 
 		if side == 1 then
@@ -243,8 +272,8 @@ local function FrontBackWirebox(props: {
 		top = topVisible and e("BoxHandleAdornment", {
 			Adornee = part,
 			Color3 = props.color,
-			CFrame = CFrame.new(0, y, side * z),
-			Size = sizeX,
+			CFrame = topCframe,
+			Size = topSize,
 			ZIndex = LINE_ZINDEX,
 		}),
 
@@ -285,13 +314,15 @@ local function TopBottomWirebox(props: {
 
 	local part = props.part
 
-	if
-		props.normal == Enum.NormalId.Top
-		and (
-			part:IsA("CornerWedgePart")
-			or (part:IsA("Part") and part.Shape == Enum.PartType.CornerWedge)
-		)
-	then
+	local isWedge = part:IsA("WedgePart")
+	local isCornerWedge = part:IsA("CornerWedgePart")
+
+	if part:IsA("Part") then
+		isWedge = part.Shape == Enum.PartType.Wedge
+		isCornerWedge = part.Shape == Enum.PartType.CornerWedge
+	end
+
+	if props.normal == Enum.NormalId.Top and (isWedge or isCornerWedge) then
 		return
 	end
 
@@ -321,60 +352,20 @@ local function TopBottomWirebox(props: {
 	local sizeX = Vector3.new(size.X + LINE_THICKNESS, LINE_THICKNESS, LINE_THICKNESS)
 	local sizeZ = Vector3.new(LINE_THICKNESS, LINE_THICKNESS, size.Z + LINE_THICKNESS)
 
-	local backSize = sizeX
-	local backCframe = CFrame.new(0, side * y, -z)
-
-	local leftSize = sizeZ
-	local leftCframe = CFrame.new(-x, side * y, 0)
-
-	local rightSize = sizeZ
-	local rightCframe = CFrame.new(x, side * y, 0)
-
-	local isWedge = part:IsA("WedgePart")
-
-	if part:IsA("Part") then
-		isWedge = part.Shape == Enum.PartType.Wedge
-	end
-
-	if isWedge and side == 1 then
-		local topPoint = CFrame.new(0, y, z).Position
-		local bottomPoint = CFrame.new(0, -y, -z).Position
-
-		local topBottomMidpoint = (topPoint + bottomPoint) / 2
-
-		backCframe = CFrame.new(bottomPoint)
-
-		leftSize = Vector3.new(
-			LINE_THICKNESS,
-			LINE_THICKNESS,
-			(topPoint - bottomPoint).Magnitude + LINE_THICKNESS
-		)
-
-		leftCframe = CFrame.new(x, 0, 0) * CFrame.lookAt(topBottomMidpoint, topPoint)
-
-		rightSize = Vector3.new(
-			LINE_THICKNESS,
-			LINE_THICKNESS,
-			(topPoint - bottomPoint).Magnitude + LINE_THICKNESS
-		)
-
-		rightCframe = CFrame.new(-x, 0, 0) * CFrame.lookAt(topBottomMidpoint, topPoint)
-	end
-
 	return e("Folder", nil, {
 		left = e("BoxHandleAdornment", {
 			Adornee = part,
 			Color3 = props.color,
-			CFrame = leftCframe,
-			Size = leftSize,
+			CFrame = CFrame.new(-x, side * y, 0),
+			Size = sizeZ,
 			ZIndex = LINE_ZINDEX,
 		}),
 
 		right = e("BoxHandleAdornment", {
 			Adornee = part,
 			Color3 = props.color,
-			CFrame = rightCframe,
-			Size = rightSize,
+			CFrame = CFrame.new(x, side * y, 0),
+			Size = sizeZ,
 			ZIndex = LINE_ZINDEX,
 		}),
 
@@ -389,8 +380,8 @@ local function TopBottomWirebox(props: {
 		back = e("BoxHandleAdornment", {
 			Adornee = part,
 			Color3 = props.color,
-			CFrame = backCframe,
-			Size = backSize,
+			CFrame = CFrame.new(0, side * y, -z),
+			Size = sizeX,
 			ZIndex = LINE_ZINDEX,
 		}),
 	})

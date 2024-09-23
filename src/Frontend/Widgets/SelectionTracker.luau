@@ -104,8 +104,8 @@ local function SelectionTracker()
 				target:IsA("WedgePart")
 				or (target:IsA("Part") and target.Shape == Enum.PartType.Wedge)
 			then
-				if normal == Enum.NormalId.Front then
-					normal = Enum.NormalId.Top
+				if normal == Enum.NormalId.Top then
+					normal = Enum.NormalId.Front
 				end
 			end
 
