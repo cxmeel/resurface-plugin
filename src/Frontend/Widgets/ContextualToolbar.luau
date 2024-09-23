@@ -18,10 +18,17 @@ local useTheme = require("../Hooks/useTheme")
 local createNextOrder = require("../Lib/createNextOrder")
 local e = React.createElement
 
+local NO_MATERIAL_VARIANTS = {
+	[Enum.SurfaceType.Motor] = true,
+	[Enum.SurfaceType.SteppingMotor] = true,
+	[Enum.SurfaceType.Hinge] = true,
+}
+
 local function ContextualToolbar()
 	local nextOrder = createNextOrder()
 	local theme = useTheme()
 
+	local selectedSurface = useValue(Preferences.selectedSurface)
 	local applyToAllFaces = useValue(Preferences.applyToAllfaces)
 	local applyToAllFacesOverride = useValue(LocalStore.applyToAllfacesOverride)
 	local useMaterialVariants = useValue(Preferences.useMaterialVariants)
@@ -74,7 +81,7 @@ local function ContextualToolbar()
 		}),
 
 		useMaterialVariants = e(ContextualActionContainer, {
-			visible = isApplyToAllFaces,
+			visible = isApplyToAllFaces and not NO_MATERIAL_VARIANTS[selectedSurface],
 			layoutOrder = nextOrder(),
 		}, {
 			tooltip = e(Tooltip, {
