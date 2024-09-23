@@ -5,13 +5,10 @@ local React = require("@pkgs/React")
 local ReactRoblox = require("@pkgs/ReactRoblox")
 
 local LocalStore = require("./Stores/LocalStore")
-local Preferences = require("./Stores/Preferences")
 
 -- Migrations to ease transition from Surface Tool
 if plugin:GetSetting("currentVersion") ~= nil then
 	LocalStore.isLegacyPluginTransition(true)
-	Preferences.setMaterialToPlastic(false)
-	Preferences.useMaterialVariants(false)
 end
 
 local App = require("./Frontend/App")
