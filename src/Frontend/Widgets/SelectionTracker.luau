@@ -143,10 +143,52 @@ local function SelectionTracker()
 		local target: BasePart = result.Instance
 		local normal = target.CFrame:VectorToObjectSpace(result.Normal)
 
+		local isWedge = target:IsA("WedgePart")
+		local isCornerWedge = target:IsA("CornerWedgePart")
+
+		if target:IsA("Part") then
+			isWedge = target.Shape == Enum.PartType.Wedge
+			isCornerWedge = target.Shape == Enum.PartType.CornerWedge
+		end
+
 		if normal then
-			local top = math.floor(normal:Dot(Vector3.yAxis) + 0.5)
-			local right = math.floor(normal:Dot(Vector3.xAxis) + 0.5)
-			local front = math.floor(normal:Dot(Vector3.zAxis) + 0.5)
+			local top = math.floor(normal:Abs():Dot(Vector3.yAxis) + 0.5)
+			local topSign = math.sign(normal.Y)
+
+			local right = math.floor(normal:Abs():Dot(Vector3.xAxis) + 0.5)
+			local rightSign = math.sign(normal.X)
+
+			local front = math.floor(normal:Abs():Dot(Vector3.zAxis) + 0.5)
+			local frontSign = math.sign(normal.Z)
+
+			print({
+				top = top,
+				right = right,
+				front = front,
+			})
+
+			if isCornerWedge then
+				if (top ~= 0 and right ~= 0) or top == 1 then
+					right, top = top, right
+				end
+			end
+
+			if front >= top and front >= right then
+				top, right = 0, 0
+				front *= frontSign
+			elseif right >= top and right >= front then
+				top, front = 0, 0
+				right *= rightSign
+			elseif top >= right and top >= front then
+				right, front = 0, 0
+				top *= topSign
+			end
+
+			if front == 1 then
+				normal = Vector3.zAxis
+			elseif front == -1 then
+				normal = -Vector3.zAxis
+			end
 
 			if top == 1 then
 				normal = Vector3.yAxis
@@ -159,18 +201,6 @@ local function SelectionTracker()
 			elseif right == -1 then
 				normal = -Vector3.xAxis
 			end
-
-			if front == 1 then
-				normal = Vector3.zAxis
-			elseif front == -1 then
-				normal = -Vector3.zAxis
-			end
-		end
-
-		local isWedge = target:IsA("WedgePart")
-
-		if target:IsA("Part") and target.Shape == Enum.PartType.Wedge then
-			isWedge = true
 		end
 
 		if isWedge and normal == Vector3.yAxis then
