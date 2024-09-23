@@ -1,5 +1,3 @@
-local plugin: Plugin = plugin or script:FindFirstAncestorOfClass("Plugin")
-
 local Selection = game:GetService("Selection")
 local UserInputService = game:GetService("UserInputService")
 
@@ -21,6 +19,15 @@ local useEffect = React.useEffect
 local useState = React.useState
 
 local e = React.createElement
+
+local NORMAL_MAP = {
+	[Vector3.yAxis] = Enum.NormalId.Top,
+	[-Vector3.yAxis] = Enum.NormalId.Bottom,
+	[Vector3.xAxis] = Enum.NormalId.Right,
+	[-Vector3.xAxis] = Enum.NormalId.Left,
+	[-Vector3.zAxis] = Enum.NormalId.Front,
+	[Vector3.zAxis] = Enum.NormalId.Back,
+}
 
 local RAYCAST_PARAMS = RaycastParams.new()
 RAYCAST_PARAMS.BruteForceAllSlow = false
@@ -84,38 +91,6 @@ local function SelectionTracker()
 
 		local hasActionableSelection = containsActionableSelection(Selection:Get())
 		LocalStore.hasActionableSelection(hasActionableSelection)
-
-		local mouse = plugin:GetMouse()
-		local connection = mouse.Move:Connect(function()
-			local normal = mouse.TargetSurface
-			local target = mouse.Target
-
-			local isValidTarget = target
-				and target:IsA("BasePart")
-				and not target.Locked
-
-			if not isValidTarget then
-				setTargetPart(nil)
-				setTargetNormal(nil)
-				return
-			end
-
-			if
-				target:IsA("WedgePart")
-				or (target:IsA("Part") and target.Shape == Enum.PartType.Wedge)
-			then
-				if normal == Enum.NormalId.Top then
-					normal = Enum.NormalId.Front
-				end
-			end
-
-			setTargetPart(target)
-			setTargetNormal(normal)
-		end)
-
-		return function()
-			connection:Disconnect()
-		end
 	end, { isPluginActive })
 
 	useEvent(Selection.SelectionChanged, function()
@@ -136,42 +111,77 @@ local function SelectionTracker()
 		connected = isPluginActive,
 	})
 
-	-- useEvent(UserInputService.InputChanged, function(inputObject, gameProcessed)
-	-- 	if
-	-- 		gameProcessed
-	-- 		or inputObject.UserInputType ~= Enum.UserInputType.MouseMovement
-	-- 	then
-	-- 		return
-	-- 	end
+	useEvent(UserInputService.InputChanged, function(inputObject, gameProcessed)
+		if
+			gameProcessed
+			or inputObject.UserInputType ~= Enum.UserInputType.MouseMovement
+		then
+			return
+		end
 
-	-- 	local camera = workspace.CurrentCamera
-	-- 	local mouseRay =
-	-- 		camera:ViewportPointToRay(inputObject.Position.X, inputObject.Position.Y)
+		local camera = workspace.CurrentCamera
+		local mouseRay =
+			camera:ViewportPointToRay(inputObject.Position.X, inputObject.Position.Y)
 
-	-- 	local result = workspace:Raycast(
-	-- 		mouseRay.Origin,
-	-- 		mouseRay.Direction * 2048,
-	-- 		RAYCAST_PARAMS
-	-- 	)
+		local result = workspace:Raycast(
+			mouseRay.Origin,
+			mouseRay.Direction * 2048,
+			RAYCAST_PARAMS
+		)
 
-	-- 	local isValidTarget = result
-	-- 		and result.Instance:IsA("BasePart")
-	-- 		and not result.Instance.Locked
+		local isValidTarget = result
+			and result.Instance:IsA("BasePart")
+			and not result.Instance.Locked
 
-	-- 	if not isValidTarget then
-	-- 		-- setTargetPart(nil)
-	-- 		-- setTargetNormal(nil)
+		if not isValidTarget then
+			setTargetPart(nil)
+			setTargetNormal(nil)
 
-	-- 		return
-	-- 	end
+			return
+		end
 
-	-- 	-- print("normal>", result.Normal)
+		local target: BasePart = result.Instance
+		local normal = target.CFrame:VectorToObjectSpace(result.Normal)
 
-	-- 	-- setTargetPart(result.Instance)
-	-- 	-- setTargetNormal(NORMAL_MAP[roundedNormal])
-	-- end, {
-	-- 	connected = isPluginActive,
-	-- })
+		if normal then
+			local top = math.floor(normal:Dot(Vector3.yAxis) + 0.5)
+			local right = math.floor(normal:Dot(Vector3.xAxis) + 0.5)
+			local front = math.floor(normal:Dot(Vector3.zAxis) + 0.5)
+
+			if top == 1 then
+				normal = Vector3.yAxis
+			elseif top == -1 then
+				normal = -Vector3.yAxis
+			end
+
+			if right == 1 then
+				normal = Vector3.xAxis
+			elseif right == -1 then
+				normal = -Vector3.xAxis
+			end
+
+			if front == 1 then
+				normal = Vector3.zAxis
+			elseif front == -1 then
+				normal = -Vector3.zAxis
+			end
+		end
+
+		local isWedge = target:IsA("WedgePart")
+
+		if target:IsA("Part") and target.Shape == Enum.PartType.Wedge then
+			isWedge = true
+		end
+
+		if isWedge and normal == Vector3.yAxis then
+			normal = -Vector3.zAxis
+		end
+
+		setTargetPart(target)
+		setTargetNormal(NORMAL_MAP[normal])
+	end, {
+		connected = isPluginActive,
+	})
 
 	if not isPluginActive or not targetPart then
 		return
