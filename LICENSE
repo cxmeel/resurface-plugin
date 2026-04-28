@@ -1,3 +1,4 @@
+RESURFACE LICENSE
 Copyright (c) 2024 cxmeel
 
 This software is provided under a Modified File-Level License. By using, 
@@ -18,7 +19,13 @@ is distributed in its original or "minimally changed" form.
   SUBSTANTIAL new functionality or significant features that do not 
   exist in the original version.
 
-3. SOURCE DISCLOSURE (FILE-LEVEL)
+3. DISCLOSURE OF CHANGES
+If you distribute a modified version of this software (whether for free or 
+for a fee), you must provide a clear and public list of all changes and 
+additions made. This summary must be provided even if the new code files 
+themselves remain private under Section 4.
+
+4. SOURCE DISCLOSURE (FILE-LEVEL)
 - Original & Modified Files: Any scripts or files originally authored 
   by cxmeels (or modifications made to those specific files) must remain 
   open-source and be provided to the recipient for free upon request.
@@ -26,7 +33,7 @@ is distributed in its original or "minimally changed" form.
   created by a third party may remain private and proprietary at the 
   distributor's discretion.
 
-4. DISCLAIMER
+5. DISCLAIMER
 This software is provided "as is", without warranty of any kind, express or 
 implied. The author shall not be liable for any claim, damages, or other 
 liability arising from the use of this software.
